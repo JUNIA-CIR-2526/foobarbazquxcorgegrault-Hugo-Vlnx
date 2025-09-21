@@ -1,5 +1,6 @@
 package com.jad;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Foo {
@@ -8,6 +9,13 @@ public class Foo {
     private Qux qux;
     private Corge corge;
     private List<Grault> graults;
+
+    public Foo(Bar bar) {
+        this.bar = bar;
+        this.bazs = new ArrayList<>();
+        this.qux = new Qux();
+        this.graults = new ArrayList<>();
+    }
 
     public List<Grault> getGraults() {
         return this.graults;
@@ -25,7 +33,6 @@ public class Foo {
         this.corge = corge;
     }
 
-
     public Bar getBar() {
         return bar;
 
@@ -33,5 +40,13 @@ public class Foo {
 
     public Qux getQux() {
         return qux;
+    }
+
+    public void addGrault() {
+        this.graults.add(new Grault());
+    }
+
+    public void addBaz(Baz baz) {
+        this.bazs.add(new Baz());
     }
 }
