@@ -43,7 +43,8 @@ public class Foo {
     }
 
     public void addGrault() {
-        this.graults.add(new Grault());
+        Grault grault = new Grault(this);
+        this.graults.add(grault);
     }
 
     public void addBaz(Baz baz) {
