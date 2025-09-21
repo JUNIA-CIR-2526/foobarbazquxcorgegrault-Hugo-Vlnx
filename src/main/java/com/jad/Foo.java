@@ -22,15 +22,21 @@ public class Foo {
     }
 
     public List<Baz> getBazs() {
-        return this.bazs;
+        return bazs;
     }
 
     public Corge getCorge() {
-        return this.corge;
+        return corge;
     }
 
     public void setCorge(Corge corge) {
+        if (this.corge != null) {
+            this.corge.setFoo(null);
+        }
         this.corge = corge;
+        if (corge != null) {
+            corge.setFoo(this);
+        }
     }
 
     public Bar getBar() {
@@ -48,6 +54,6 @@ public class Foo {
     }
 
     public void addBaz(Baz baz) {
-        this.bazs.add(new Baz());
+        this.bazs.add(baz);
     }
 }
